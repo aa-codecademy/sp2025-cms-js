@@ -29,6 +29,20 @@ nav a:hover {
 	color: #ddd;
 }
 
+.admin-link {
+	background: #28a745;
+	color: #fff !important;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.admin-link:hover {
+	background: #218838;
+	color: #fff !important;
+}
+
 .auth-buttons {
 	display: inline-block;
 	margin-left: 2rem;
