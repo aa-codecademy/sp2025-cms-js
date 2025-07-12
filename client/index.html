@@ -12,6 +12,14 @@
 			<nav>
 				<a href="#articles-section">Articles</a>
 				<a href="#about-section">About</a>
+				<div class="auth-buttons">
+					<button id="login-btn" class="auth-btn">Login</button>
+					<button id="register-btn" class="auth-btn">Register</button>
+					<button id="logout-btn" class="auth-btn" style="display: none">
+						Logout
+					</button>
+					<span id="user-info" style="display: none"></span>
+				</div>
 			</nav>
 		</header>
 
@@ -31,6 +39,47 @@
 				</p>
 			</section>
 		</main>
+
+		<!-- Auth Modals -->
+		<div id="login-modal" class="modal" style="display: none">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2>Login</h2>
+				<form id="login-form">
+					<div class="form-group">
+						<label for="login-email">Email:</label>
+						<input type="email" id="login-email" required />
+					</div>
+					<div class="form-group">
+						<label for="login-password">Password:</label>
+						<input type="password" id="login-password" required />
+					</div>
+					<button type="submit">Login</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="register-modal" class="modal" style="display: none">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2>Register</h2>
+				<form id="register-form">
+					<div class="form-group">
+						<label for="register-name">Name:</label>
+						<input type="text" id="register-name" required />
+					</div>
+					<div class="form-group">
+						<label for="register-email">Email:</label>
+						<input type="email" id="register-email" required />
+					</div>
+					<div class="form-group">
+						<label for="register-password">Password:</label>
+						<input type="password" id="register-password" required />
+					</div>
+					<button type="submit">Register</button>
+				</form>
+			</div>
+		</div>
 
 		<footer>
 			<p>&copy; 2023 My Simple Blog. All rights reserved.</p>

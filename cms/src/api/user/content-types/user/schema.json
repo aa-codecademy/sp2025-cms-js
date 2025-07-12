@@ -1,0 +1,35 @@
+{
+	"kind": "collectionType",
+	"collectionName": "users",
+	"info": {
+		"singularName": "user",
+		"pluralName": "users",
+		"displayName": "User"
+	},
+	"options": {
+		"draftAndPublish": false
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"email": {
+			"type": "email",
+			"unique": true,
+			"required": true
+		},
+		"password": {
+			"type": "password",
+			"private": true,
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"role": {
+			"type": "enumeration",
+			"enum": ["admin", "user"],
+			"default": "user",
+			"required": true
+		}
+	}
+}

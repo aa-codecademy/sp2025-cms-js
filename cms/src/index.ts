@@ -44,5 +44,35 @@ export default {
 
 			console.log('✅ Default article created successfully!');
 		}
+
+		// Check if any users exist
+		const users = await strapi.entityService.findMany('api::user.user');
+
+		// If no users exist, create default users
+		if (!users || users.length === 0) {
+			// Create admin user
+			await strapi.entityService.create('api::user.user', {
+				data: {
+					email: 'admin@example.com',
+					password: 'admin123',
+					name: 'Admin User',
+					role: 'admin',
+				},
+			});
+
+			// Create basic user
+			await strapi.entityService.create('api::user.user', {
+				data: {
+					email: 'user@example.com',
+					password: 'user123',
+					name: 'Basic User',
+					role: 'user',
+				},
+			});
+
+			console.log('✅ Default users created successfully!');
+			console.log('📧 Admin: admin@example.com / admin123');
+			console.log('📧 User: user@example.com / user123');
+		}
 	},
 };

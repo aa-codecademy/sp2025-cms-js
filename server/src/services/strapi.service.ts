@@ -5,13 +5,15 @@ import axios, { AxiosInstance } from 'axios';
 @Injectable()
 export class StrapiService {
   private readonly axiosInstance: AxiosInstance;
+  private readonly strapiUrl: string;
 
   constructor(private readonly configService: ConfigService) {
-    const strapiUrl = this.configService.get<string>('strapi.url');
+    this.strapiUrl =
+      this.configService.get<string>('strapi.url') || 'http://localhost:1337';
     const apiToken = this.configService.get<string>('strapi.apiToken');
 
     this.axiosInstance = axios.create({
-      baseURL: `${strapiUrl}/api`,
+      baseURL: `${this.strapiUrl}/api`,
       headers: {
         'Content-Type': 'application/json',
         ...(apiToken && { Authorization: `Bearer ${apiToken}` }),
@@ -26,6 +28,18 @@ export class StrapiService {
 
   async post<T>(endpoint: string, data?: unknown): Promise<T> {
     const response = await this.axiosInstance.post(endpoint, data);
+    return response.data as T;
+  }
+
+  async postPublic<T>(endpoint: string, data?: unknown): Promise<T> {
+    // No Authorization header for public endpoints
+    const response = await axios.post(
+      `${this.strapiUrl}/api${endpoint}`,
+      data,
+      {
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
     return response.data as T;
   }
 

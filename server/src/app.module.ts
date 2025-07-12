@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ArticlesModule } from './articles/articles.module';
+import { AuthModule } from './auth/auth.module';
 import strapiConfig from './config/strapi.config';
 
 @Module({
@@ -10,6 +11,7 @@ import strapiConfig from './config/strapi.config';
       load: [strapiConfig],
     }),
     ArticlesModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
