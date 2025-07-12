@@ -2,6 +2,25 @@
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
+## 🎯 Default Setup
+
+This Strapi instance is configured with a default Article content type that includes:
+
+- **Title**: String field for article titles
+- **Content**: Rich text blocks for article content
+- **Cover Image**: Media field for article images
+
+### Default Article
+
+When you first start the application, a default article will be automatically created with:
+
+- Title: "First Article"
+- Content: "Some random text for the first article"
+
+This ensures consistent data structure across different database setups.
+
+## 🛠️ Development
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)

@@ -22,7 +22,6 @@ export class ArticlesService {
 
     return {
       id: strapiArticle.id,
-      documentId: strapiArticle.documentId,
       title: strapiArticle.title,
       content: strapiArticle.content,
       publishedAt: new Date(strapiArticle.publishedAt),

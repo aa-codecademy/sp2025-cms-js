@@ -12,13 +12,6 @@ export class StrapiArticleDto {
   id: number;
 
   @ApiProperty({
-    description: 'The document ID of the article',
-    example: 'zzlww40wum4minvistgdmbp0',
-  })
-  @IsString()
-  documentId: string;
-
-  @ApiProperty({
     description: 'The title of the article',
     example: 'First Article',
   })

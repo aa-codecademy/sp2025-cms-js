@@ -1,0 +1,19 @@
+{
+	"data": [
+		{
+			"title": "First Article",
+			"content": [
+				{
+					"type": "paragraph",
+					"children": [
+						{
+							"text": "Some random text for the first article",
+							"type": "text"
+						}
+					]
+				}
+			],
+			"publishedAt": "2025-07-12T18:30:48.519Z"
+		}
+	]
+}

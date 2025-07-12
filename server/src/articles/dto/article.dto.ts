@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsDate, IsNumber, IsArray } from 'class-validator';
+import { IsNumber, IsString, IsArray, IsDate } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class ArticleTextNodeDto {
@@ -41,13 +41,6 @@ export class ArticleDto {
   })
   @IsNumber()
   id: number;
-
-  @ApiProperty({
-    description: 'The document ID of the article',
-    example: 'zzlww40wum4minvistgdmbp0',
-  })
-  @IsString()
-  documentId: string;
 
   @ApiProperty({
     description: 'The title of the article',

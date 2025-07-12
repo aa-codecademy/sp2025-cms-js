@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <small>Published: ${new Date(
 										article.publishedAt
 									).toLocaleDateString()}</small>
+                  <small>ID: ${article.id}</small>
                   <a href="#">Read More</a>
               `;
 				articlesContainer.appendChild(articleCard);
