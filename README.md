@@ -54,6 +54,12 @@ sp2025-cms/
 - **NestJS server** communicates with **Strapi CMS** via HTTP (REST API), acting as a secure proxy and business logic layer.
 - **Strapi CMS** manages content (articles) and users, and exposes its own REST API.
 
+### 🏗️ System Architecture
+
+![System Architecture](image.png)
+
+_The diagram shows the complete data flow: Client applications (React/Angular/No Framework) communicate with server applications (NestJS/.NET), which in turn interact with Strapi CMS, which stores data in PostgreSQL database._
+
 ---
 
 ## 🏗️ Complete Data Flow Architecture
@@ -66,9 +72,9 @@ Understanding how data flows through this system is crucial for development and 
 
 ```javascript
 // Client (client/script.js)
-const response = await fetch('http://localhost:3000/api/articles', {
-	method: 'GET',
-	headers: { 'Content-Type': 'application/json' },
+const response = await fetch("http://localhost:3000/api/articles", {
+  method: "GET",
+  headers: { "Content-Type": "application/json" },
 });
 ```
 
@@ -85,11 +91,11 @@ const response = await fetch('http://localhost:3000/api/articles', {
 ```typescript
 // NestJS Server (server/src/articles/articles.service.ts)
 const response = await this.strapiService.get<
-	StrapiResponseDto<StrapiArticleDto[]>
->('/articles', {
-	'pagination[page]': page,
-	'pagination[pageSize]': pageSize,
-	populate: '*',
+  StrapiResponseDto<StrapiArticleDto[]>
+>("/articles", {
+  "pagination[page]": page,
+  "pagination[pageSize]": pageSize,
+  populate: "*",
 });
 ```
 
@@ -187,13 +193,13 @@ Client → PUT /api/articles/:id → NestJS → PUT /articles/:id → Strapi →
 
 ```javascript
 try {
-	const response = await fetch('/api/articles');
-	if (!response.ok) throw new Error('HTTP error');
-	const data = await response.json();
-	// Display articles in UI
+  const response = await fetch("/api/articles");
+  if (!response.ok) throw new Error("HTTP error");
+  const data = await response.json();
+  // Display articles in UI
 } catch (error) {
-	console.error('Client error:', error);
-	// Show user-friendly error message
+  console.error("Client error:", error);
+  // Show user-friendly error message
 }
 ```
 
@@ -201,11 +207,11 @@ try {
 
 ```typescript
 try {
-	const articles = await this.strapiService.get('/articles');
-	return this.transformStrapiResponse(articles);
+  const articles = await this.strapiService.get("/articles");
+  return this.transformStrapiResponse(articles);
 } catch (error) {
-	this.logger.error('Server error:', error);
-	throw new NotFoundException('Articles not found');
+  this.logger.error("Server error:", error);
+  throw new NotFoundException("Articles not found");
 }
 ```
 
@@ -243,17 +249,17 @@ private transformStrapiArticle(strapiArticle: StrapiArticleDto): ArticleDto {
 
 ```javascript
 // client/script.js
-result.data.forEach(article => {
-	// Transform rich text content for display
-	let textContent = '';
-	if (article.content && Array.isArray(article.content)) {
-		article.content.forEach(paragraph => {
-			paragraph.children.forEach(child => {
-				if (child.text) textContent += child.text + ' ';
-			});
-		});
-	}
-	// Display in UI
+result.data.forEach((article) => {
+  // Transform rich text content for display
+  let textContent = "";
+  if (article.content && Array.isArray(article.content)) {
+    article.content.forEach((paragraph) => {
+      paragraph.children.forEach((child) => {
+        if (child.text) textContent += child.text + " ";
+      });
+    });
+  }
+  // Display in UI
 });
 ```
 
