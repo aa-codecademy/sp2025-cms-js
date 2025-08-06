@@ -4,9 +4,9 @@ This project is a fullstack web application boilerplate featuring:
 
 - **Strapi CMS** (for content and user management)
 - **NestJS Server** (for API, authentication, and business logic)
-- **Frontend Client** (can be plain JavaScript/HTML/CSS, React, Angular, or Next.js)
+- **Plain JavaScript Client** (for the frontend)
 
-It is designed for students to learn how to integrate a modern CMS, a robust backend, and a simple frontend, and to extend the system with new features, while delivering a production ready application for our clients.
+It is designed for students to learn how to integrate a modern CMS, a robust backend, and a simple frontend, and to extend the system with new features.
 
 ## 🎯 Learning Objectives
 
@@ -15,7 +15,7 @@ By working with this project, you will learn:
 - **Modern Architecture Patterns**: Understanding microservices, API gateways, and layered architecture
 - **CMS Integration**: How to use Strapi as a headless CMS with custom content types
 - **Backend Development**: Building REST APIs with NestJS, including authentication and data transformation
-- **Frontend Development**: Creating responsive UIs with vanilla JavaScript, React, Angular or NextJS
+- **Frontend Development**: Creating responsive UIs with vanilla JavaScript
 - **Database Design**: Working with PostgreSQL and understanding content type schemas
 - **API Design**: Creating clean, documented APIs with proper error handling
 - **Authentication**: Implementing JWT-based authentication across multiple services
@@ -43,7 +43,6 @@ sp2025-cms/
 │   │   ├── auth/             # Authentication module
 │   │   ├── shared/           # Shared DTOs and utilities
 │   │   └── services/         # External service integrations
-├── docs/                     # Documentation files
 └── README.md                 # This file
 ```
 
@@ -55,75 +54,37 @@ sp2025-cms/
 
 ### 🏗️ System Architecture
 
-![System Architecture](image.png)
+![System Architecture](../image.png)
 
 _The diagram shows the complete data flow: Client applications (React/Angular/No Framework) communicate with server applications (NestJS/.NET), which in turn interact with Strapi CMS, which stores data in PostgreSQL database._
 
 ## 📚 Documentation Index
 
-The documentation has been organized into focused guides for easier navigation:
-
 ### 🚀 Getting Started
 
-- [How to Install and Setup](./docs/how-to-install.md) - Complete installation guide
-- [How to Configure Environment](./docs/how-to-configure.md) - Environment variables and database setup
-- [How to Start the Applications](./docs/how-to-start.md) - Running all services
+- [How to Install and Setup](./how-to-install.md) - Complete installation guide
+- [How to Configure Environment](./how-to-configure.md) - Environment variables and database setup
+- [How to Start the Applications](./how-to-start.md) - Running all services
 
 ### 🏗️ Architecture & Data Flow
 
-- [How the System Works](./docs/how-system-works.md) - Complete data flow architecture
-- [Technology Stack Overview](./docs/technology-stack.md) - Deep dive into technologies used
+- [How the System Works](./how-system-works.md) - Complete data flow architecture
+- [Technology Stack Overview](./technology-stack.md) - Deep dive into technologies used
 
 ### 📖 Usage Guides
 
-- [How to Use the Application](./docs/how-to-use.md) - Authentication and content management
-- [API Reference](./docs/api-reference.md) - Complete API endpoints documentation
+- [How to Use the Application](./how-to-use.md) - Authentication and content management
+- [API Reference](./api-reference.md) - Complete API endpoints documentation
 
 ### 🔧 Development Guides
 
-- [How to Add New Features](./docs/how-to-add-features.md) - Adding content types and API endpoints
-- [How to Troubleshoot Issues](./docs/how-to-troubleshoot.md) - Common problems and solutions
-- [How to Expand the Project](./docs/how-to-expand.md) - Advanced enhancements and extensions
+- [How to Add New Features](./how-to-add-features.md) - Adding content types and API endpoints
+- [How to Troubleshoot Issues](./how-to-troubleshoot.md) - Common problems and solutions
+- [How to Expand the Project](./how-to-expand.md) - Advanced enhancements and extensions
 
 ### 📚 Learning Resources
 
-- [Learning Resources](./docs/learning-resources.md) - Documentation links and tutorials
-
-## 🚀 Quick Start
-
-For a quick start, follow these steps:
-
-1. **Install and Setup**: [Complete installation guide](./docs/how-to-install.md)
-2. **Configure Environment**: [Environment setup](./docs/how-to-configure.md)
-3. **Start Applications**: [Running all services](./docs/how-to-start.md)
-4. **Learn the System**: [How the system works](./docs/how-system-works.md)
-
-## 🛠️ Technology Stack
-
-- **Strapi CMS**: Headless CMS for content management
-- **NestJS Server**: Backend API with business logic and security
-- **PostgreSQL**: Primary database for all data storage
-- **Plain JavaScript Client**: Simple frontend demonstration
-
-For detailed technology information, see [Technology Stack Overview](./docs/technology-stack.md).
-
-## 📖 API Reference
-
-Complete API documentation is available at [API Reference](./docs/api-reference.md).
-
-## 🔧 Development
-
-For development guides and troubleshooting:
-
-- [Adding New Features](./docs/how-to-add-features.md)
-- [Troubleshooting Issues](./docs/how-to-troubleshoot.md)
-- [Expanding the Project](./docs/how-to-expand.md)
-
-## 📚 Learning
-
-For comprehensive learning resources:
-
-- [Learning Resources](./docs/learning-resources.md)
+- [Learning Resources](./learning-resources.md) - Documentation links and tutorials
 
 ---
 
